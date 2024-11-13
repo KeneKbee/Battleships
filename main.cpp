@@ -499,7 +499,7 @@ int main()
 
         while (true)
         {
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignore any excess input from previous cins
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Do you want to play again? Y/N: ";
             cin >> ready;
             clear();
