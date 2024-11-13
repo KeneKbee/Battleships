@@ -302,7 +302,7 @@ int main()
     
    do
    {
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // fail safe for input: ny
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Are you ready to play a match? Y/N: ";
         cin >> ready;
         clear();
