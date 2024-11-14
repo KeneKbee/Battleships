@@ -19,7 +19,7 @@ void clear()
     system("cls");
 }
 
-int intro()
+int showIntro()
 {
     int input;
     while (true)
@@ -49,7 +49,7 @@ int intro()
     return input;
 }
 
-void tutorial()
+void showTutorial()
 {
     clear();
     cout << "Tutorial:" << endl << endl;
@@ -222,7 +222,7 @@ Board placeShips(Board board, Ship ships)
     return board;
 }
 
-void ending(Board board1, Board board2, Player player1, Player player2)
+void showEnding(Board board1, Board board2, Player player1, Player player2)
 {
     cout << "You won! - all ships have been sunk!" << endl << endl;
     sleep(2000);
@@ -264,11 +264,11 @@ int main()
 
     while (true)
     {
-        int answer = intro();
+        int answer = showIntro();
         switch(answer)
         {
             case 1:
-                tutorial();
+                showTutorial();
             break;
 
             case 2:
@@ -495,7 +495,7 @@ int main()
             }
         }
 
-        ending(board1, board2, player1, player2);
+        showEnding(board1, board2, player1, player2);
 
         while (true)
         {
