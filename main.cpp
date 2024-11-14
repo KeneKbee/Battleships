@@ -102,7 +102,7 @@ int getXCoordinate(string text)
     int input;
     while (true)
     {
-        cout << "Enter " << text << ": ";
+        cout << "Enter X: ";
         cin >> input;
 
         if (cin.fail() || input < 1 || input > 10) // Check if input is valid
@@ -125,7 +125,7 @@ int getYCoordinate(string text)
     char input;
     while(true)
     {
-        cout << "Enter " << text << ": ";
+        cout << "Enter Y: ";
         cin >> input;
 
         if (toupper(input)<65 || toupper(input)>74) // Check if input is valid 
@@ -163,10 +163,21 @@ bool getRotation()
             sleep(2000);
         }
     }
-    
 }
 
-Board placeShips(Board board, Ship ships)
+bool shipAllChecker(Ship ships[])
+{
+    for (int i = 0; i < 10; i++)
+    {
+        if (ships[i].checker()==false)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+Board placeShips(Board board, Ship ships[])
 {
     int count=0;
     int x;
@@ -175,7 +186,7 @@ Board placeShips(Board board, Ship ships)
     int rotation;
     while (count < 10)
     {
-        length = ships.getLength(count);
+        length = ships[count].getLength();
         
         cout << "Ships remaining: " << (count-10)*(-1) << endl << endl;
         cout << "Length: " << length << endl << endl;
@@ -314,8 +325,8 @@ int main()
         Board board1;
         Board board2;
 
-        Ship ships1;
-        Ship ships2;
+        Ship ships1[10] = {4, 3, 3, 2, 2, 2, 1, 1, 1, 1};
+        Ship ships2[10] = {4, 3, 3, 2, 2, 2, 1, 1, 1, 1};
 
         player1.switchPlayer();
 
@@ -371,8 +382,8 @@ int main()
                 else
                 {
                     clear();
-                    ships2.shotsFired(board2.getChar(x,y)-48); // 48 is the ASCII value of 0
-                    bool sunk = ships2.checker(board2.getChar(x,y)-48);
+                    ships2[board2.getChar(x,y)-48].shotsFired(); // 48 is the ASCII value of 0
+                    bool sunk = ships2[board2.getChar(x,y)-48].checker();
                     if (sunk == false)
                     {
                         board1.setCharE(x,y,'X');
@@ -395,7 +406,7 @@ int main()
                         player1.setMaxStreak(streak);
                     }
 
-                    if (ships2.allChecker() == false)
+                    if (shipAllChecker(ships2) == false)
                     {
                         if (sunk == true)
                         {
@@ -411,7 +422,7 @@ int main()
                 }
                 clear();
             }
-            if (ships2.allChecker() == true)
+            if (shipAllChecker(ships2) == true)
             {
                 break;
             }
@@ -449,8 +460,8 @@ int main()
                 else
                 {
                     clear();
-                    ships1.shotsFired(board1.getChar(x,y)-48); // 48 is the ASCII value of 0
-                    bool sunk = ships1.checker(board1.getChar(x,y)-48);
+                    ships1[board1.getChar(x,y)-48].shotsFired(); // 48 is the ASCII value of 0
+                    bool sunk = ships1[board1.getChar(x,y)-48].checker();
                     if (sunk == false)
                     {
                         board2.setCharE(x,y,'X');
@@ -473,7 +484,7 @@ int main()
                         player2.setMaxStreak(streak);
                     }
 
-                    if (ships1.allChecker() == false)
+                    if (shipAllChecker(ships1) == false)
                     {
                         if (sunk == true)
                         {
@@ -489,7 +500,7 @@ int main()
                 }
                 clear();
             }
-            if (ships1.allChecker() == true)
+            if (shipAllChecker(ships1) == true)
             {
                 break;
             }

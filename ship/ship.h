@@ -7,13 +7,12 @@ using namespace std;
 class Ship
 {
 private:
-    int lengths[10] = {4, 3, 3, 2, 2, 2, 1, 1, 1, 1};
+    int length;
 public:
-    Ship();
-    void shotsFired(int i);
-    int getLength(int i);
-    bool checker(int i);
-    bool allChecker();
+    Ship(int length);
+    void shotsFired();
+    int getLength();
+    bool checker();
     ~Ship();
 };
 

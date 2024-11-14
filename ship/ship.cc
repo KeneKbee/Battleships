@@ -1,30 +1,30 @@
 #include "ship.h"
 
-Ship::Ship()
+Ship::Ship(int length)
 {
-
+    this->length=length;
 }
 
-void Ship::shotsFired(int i)
+void Ship::shotsFired()
 {
-    this->lengths[i] -= 1;
+    this->length -= 1;
 }
 
-int Ship::getLength(int i)
+int Ship::getLength()
 {
-    return this->lengths[i];
+    return this->length;
 }
 
-bool Ship::checker(int i)
+bool Ship::checker()
 {
-    if (this->lengths[i] == 0)
+    if (this->length == 0)
     {
         return true;
     }
     return false;
 }
 
-bool Ship::allChecker()
+/*bool Ship::allChecker()
 {
     for (int i = 0; i < 10; i++)
     {
@@ -35,7 +35,7 @@ bool Ship::allChecker()
         }
     }
     return true;
-}
+}*/
 
 Ship::~Ship()
 {
