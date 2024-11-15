@@ -24,20 +24,6 @@ bool Ship::checker()
     return false;
 }
 
-/*bool Ship::allChecker()
-{
-    for (int i = 0; i < 10; i++)
-    {
-        if (this->lengths[i] != 0)
-        {
-            
-            return false;
-        }
-    }
-    return true;
-}*/
-
 Ship::~Ship()
 {
-
 }
