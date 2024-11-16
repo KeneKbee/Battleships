@@ -55,6 +55,7 @@ int getYCoordinate(string text)
         if (toupper(input)<65 || toupper(input)>74) // Check if input is valid 
         {
             cerr << "Invalid input. Please enter a valid letter (A-J)." << endl << endl;
+            sleep(2000);
         }
         else {
             break;

@@ -17,8 +17,13 @@ void Player::changeName()
 {
     cout << "Your old name is " << "\033[38;5;214m" << this->name << "\033[0m" << endl << endl;
     cout << "Enter your new name: ";
-    cin >> this->name;
+    getline(cin , this->name); 
     clear();
+}
+
+string Player::getName()
+{
+    return this->name;
 }
 
 void Player::switchPlayer()
@@ -62,7 +67,7 @@ void Player::setScore()
 
 void Player::goodbye()
 {
-    cout << "Goodbye " << this->name << endl;
+    cout << "Goodbye \033[38;5;214m" << this->name << "\033[0m" << endl;
 }
 
 Player::~Player()

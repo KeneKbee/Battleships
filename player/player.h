@@ -14,6 +14,7 @@ public:
     Player(string name);
     void clear();
     void changeName();
+    string getName();
     void switchPlayer();
     int getMaxStreak();
     void setMaxStreak(int newStreak);

@@ -98,10 +98,10 @@ void Menu::showEnding(Board board1, Board board2, Player player1, Player player2
     cout << "You won! - all ships have been sunk!" << endl << endl;
     system("pause");
     system("cls");
-    cout << "Player 1:" << endl <<"Max streak: " << player1.getMaxStreak() << "\t Score: " << player1.getScore() << endl << endl << "Board: " << endl << endl;
+    cout << "\033[38;5;214m" << player1.getName() << "\033[0m:" << endl << endl <<"Max streak: " << player1.getMaxStreak() << "\t Score: " << player1.getScore() << endl << endl << "Board: " << endl << endl;
     board1.showPlayerBoard();
     cout << endl << endl;
-    cout << "Player 2:" << endl <<"Max streak: " << player2.getMaxStreak() << "\t Score: " << player2.getScore() << endl << endl << "Board: " << endl << endl;
+    cout << "\033[38;5;214m" << player2.getName() << "\033[0m:" << endl << endl <<"Max streak: " << player2.getMaxStreak() << "\t Score: " << player2.getScore() << endl << endl << "Board: " << endl << endl;
     board2.showPlayerBoard();
     cout << endl << endl;
 }
