@@ -20,7 +20,7 @@ void clear()
     system("cls");
 }
 
-int getXCoordinate(string text)
+int getXCoordinate()
 {
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignore any excess input from previous cins (e.g Enter X: 1a - the 'a' will get ignored)
     int input;
@@ -43,7 +43,7 @@ int getXCoordinate(string text)
     return input-1;
 }
 
-int getYCoordinate(string text)
+int getYCoordinate()
 {
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignore any excess input from previous cins (e.g Enter X: 1a - the 'a' will get ignored)
     char input;
@@ -115,8 +115,8 @@ Board placeShips(Board board, Ship ships[])
         
         cout << "Ships remaining: " << (count-10)*(-1) << endl << endl;
         cout << "Length: " << length << endl << endl;
-        x = getXCoordinate("X");
-        y = getYCoordinate("Y");
+        x = getXCoordinate();
+        y = getYCoordinate();
         if (length != 1)
         {
             rotation = getRotation();
@@ -264,8 +264,8 @@ int main()
             {
                 board1.showBothBoards();
                 cout << "Streak: " << streak << endl << endl;
-                x = getXCoordinate("X");
-                y = getYCoordinate("Y");
+                x = getXCoordinate();
+                y = getYCoordinate();
                 if (board2.getChar(x,y)=='-')
                 {
                     clear();
@@ -346,8 +346,8 @@ int main()
             {
                 board2.showBothBoards();
                 cout << "Streak: " << streak << endl << endl;
-                x = getXCoordinate("X");
-                y = getYCoordinate("Y");
+                x = getXCoordinate();
+                y = getYCoordinate();
                 if (board1.getChar(x,y)=='-')
                 {
                     clear();
