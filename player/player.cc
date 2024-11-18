@@ -17,7 +17,7 @@ void Player::changeName()
 {
     cout << "Your old name is " << "\033[38;5;214m" << this->name << "\033[0m" << endl << endl;
     cout << "Enter your new name: ";
-    getline(cin , this->name); 
+    cin >> this->name;
     clear();
 }
 
