@@ -1,5 +1,4 @@
 # Battleships
-## Description
 A console game made for a school project using C++
 
 ## Features
